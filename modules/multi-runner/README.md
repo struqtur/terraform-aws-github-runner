@@ -74,42 +74,41 @@ module "multi-runner" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.3  |
-| <a name="requirement_aws"></a> [aws](#requirement_aws)                   | ~> 5.27 |
-| <a name="requirement_random"></a> [random](#requirement_random)          | ~> 3.0  |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.27 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.0 |
 
 ## Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws)          | ~> 5.27 |
-| <a name="provider_random"></a> [random](#provider_random) | ~> 3.0  |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.27 |
+| <a name="provider_random"></a> [random](#provider\_random) | ~> 3.0 |
 
 ## Modules
 
-| Name                                                                             | Source                    | Version |
-| -------------------------------------------------------------------------------- | ------------------------- | ------- |
-| <a name="module_ami_housekeeper"></a> [ami_housekeeper](#module_ami_housekeeper) | ../ami-housekeeper        | n/a     |
-| <a name="module_runner_binaries"></a> [runner_binaries](#module_runner_binaries) | ../runner-binaries-syncer | n/a     |
-| <a name="module_runners"></a> [runners](#module_runners)                         | ../runners                | n/a     |
-| <a name="module_ssm"></a> [ssm](#module_ssm)                                     | ../ssm                    | n/a     |
-| <a name="module_webhook"></a> [webhook](#module_webhook)                         | ../webhook                | n/a     |
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_ami_housekeeper"></a> [ami\_housekeeper](#module\_ami\_housekeeper) | ../ami-housekeeper | n/a |
+| <a name="module_runner_binaries"></a> [runner\_binaries](#module\_runner\_binaries) | ../runner-binaries-syncer | n/a |
+| <a name="module_runners"></a> [runners](#module\_runners) | ../runners | n/a |
+| <a name="module_ssm"></a> [ssm](#module\_ssm) | ../ssm | n/a |
+| <a name="module_webhook"></a> [webhook](#module\_webhook) | ../webhook | n/a |
 
 ## Resources
 
-| Name                                                                                                                                                  | Type        |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [aws_sqs_queue.queued_builds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue)                                  | resource    |
-| [aws_sqs_queue.queued_builds_dlq](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue)                              | resource    |
-| [aws_sqs_queue.webhook_events_workflow_job_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue)              | resource    |
-| [aws_sqs_queue_policy.build_queue_dlq_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy)           | resource    |
-| [aws_sqs_queue_policy.build_queue_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy)               | resource    |
-| [random_string.random](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)                                         | resource    |
+| Name | Type |
+|------|------|
+| [aws_sqs_queue.queued_builds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
+| [aws_sqs_queue.queued_builds_dlq](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
+| [aws_sqs_queue.webhook_events_workflow_job_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
+| [aws_sqs_queue_policy.build_queue_dlq_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy) | resource |
+| [aws_sqs_queue_policy.build_queue_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy) | resource |
+| [random_string.random](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [aws_iam_policy_document.deny_unsecure_transport](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
@@ -181,12 +180,11 @@ module "multi-runner" {
 
 ## Outputs
 
-| Name                                                                                         | Description |
-| -------------------------------------------------------------------------------------------- | ----------- |
-| <a name="output_binaries_syncer_map"></a> [binaries_syncer_map](#output_binaries_syncer_map) | n/a         |
-| <a name="output_queues"></a> [queues](#output_queues)                                        | SQS queues. |
-| <a name="output_runners_map"></a> [runners_map](#output_runners_map)                         | n/a         |
-| <a name="output_ssm_parameters"></a> [ssm_parameters](#output_ssm_parameters)                | n/a         |
-| <a name="output_webhook"></a> [webhook](#output_webhook)                                     | n/a         |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_binaries_syncer_map"></a> [binaries\_syncer\_map](#output\_binaries\_syncer\_map) | n/a |
+| <a name="output_queues"></a> [queues](#output\_queues) | SQS queues. |
+| <a name="output_runners_map"></a> [runners\_map](#output\_runners\_map) | n/a |
+| <a name="output_ssm_parameters"></a> [ssm\_parameters](#output\_ssm\_parameters) | n/a |
+| <a name="output_webhook"></a> [webhook](#output\_webhook) | n/a |
 <!-- END_TF_DOCS -->
